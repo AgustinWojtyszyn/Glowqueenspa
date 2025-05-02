@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowQueen</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col text-[#1E2E4A] bg-[#F7F9F4]">
+    <header class="flex justify-between items-center w-full px-6 py-6 max-w-screen-xl mx-auto">
+      <a href="#" class="font-semibold text-2xl flex items-center gap-1">
+        <span>Glow</span>
+        <span class="text-[#8DB9B0]">Queen</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Services</a>
+        <a href="#" class="hover:underline">Facilities</a>
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:underline">
+            More <i class="fas fa-chevron-down text-xs"></i>
+          </button>
+          <ul
+            class="absolute top-full left-0 mt-1 bg-white shadow-md rounded-md py-2 w-32 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity text-sm"
+          >
+            <li><a href="#" class="block px-4 py-1 hover:bg-[#8DB9B0]/20">Option 1</a></li>
+            <li><a href="#" class="block px-4 py-1 hover:bg-[#8DB9B0]/20">Option 2</a></li>
+            <li><a href="#" class="block px-4 py-1 hover:bg-[#8DB9B0]/20">Option 3</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <button class="hover:text-[#8DB9B0]" aria-label="Search">
+          <i class="fas fa-search text-lg"></i>
+        </button>
+        <button class="hover:text-[#8DB9B0]" aria-label="Cart">
+          <i class="fas fa-shopping-bag text-lg"></i>
+        </button>
+        <a href="#" class="hover:underline">Sign In</a>
+        <a href="#" class="bg-[#1E2E4A] text-white rounded-full px-6 py-2 font-semibold hover:bg-[#16203a] transition">Sign Up</a>
+      </div>
+    </header>
+
+    <main class="flex-grow flex flex-col md:flex-row items-center justify-center px-6 w-full max-w-screen-xl mx-auto gap-12">
+      <section class="md:w-1/2 text-center md:text-left">
+        <h1 class="font-extrabold text-3xl md:text-5xl leading-tight">
+          Bring back the beauty and glow of your skin
+        </h1>
+        <p class="text-[#7E7E7E] mt-4 text-sm md:text-base">
+          We provide you various treatments from head to toe using the best product, advanced technology, and affordable price
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+          <button class="bg-[#1E2E4A] text-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#16203a] transition">
+            Book Now
+          </button>
+          <button class="flex items-center gap-2 text-sm hover:underline">
+            <span class="w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:shadow-xl transition">
+              <i class="fas fa-play"></i>
+            </span>
+            Watch Video
+          </button>
+        </div>
+
+        <div class="mt-12 bg-white rounded-xl shadow-lg py-8 px-6 flex justify-around max-w-[420px] mx-auto md:mx-0">
+          <div class="flex flex-col items-center gap-2">
+            <div class="bg-[#8DB9B0] rounded-full p-3">
+              <img src="https://storage.googleapis.com/a1aa/image/eaf7220d-885f-4218-8161-021ea60d1127.jpg" alt="Icon 1" class="w-6 h-6" />
+            </div>
+            <p class="font-bold text-xl">15+</p>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="bg-[#8DB9B0] rounded-full p-3">
+              <img src="https://storage.googleapis.com/a1aa/image/e483163d-fbea-450c-364e-74c57393d3b1.jpg" alt="Icon 2" class="w-6 h-6" />
+            </div>
+            <p class="font-bold text-xl">25+</p>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="bg-[#8DB9B0] rounded-full p-3">
+              <img src="https://storage.googleapis.com/a1aa/image/2820e631-d25d-4d83-45e0-8a3440b39301.jpg" alt="Icon 3" class="w-6 h-6" />
+            </div>
+            <p class="font-bold text-xl">100%</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="md:w-1/2 relative flex justify-center items-center">
+        <div class="relative z-10">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/8eb9275c-8051-4dad-858f-eaf4862c052e.jpg"
+            alt="Model woman"
+            class="rounded-tl-[100px] rounded-bl-[100px] w-full max-w-[400px] md:max-w-[500px] lg:max-w-[550px]"
+          />
+
+          <div class="testimonial-bubble bubble-top-left hidden md:block">
+            <p><i class="fas fa-quote-left"></i> I have a regular schedule to take treatment from GlowQueen, they gave me the best service and treatment ever to maintain the beauty and health of my skin</p>
+            <p class="font-bold mt-2">Sophia Princeton</p>
+          </div>
+
+          <div class="testimonial-bubble bubble-bottom-right hidden md:block bg-[#F7F9F4]">
+            <p><i class="fas fa-quote-left"></i> For the past few years, I've had a hard time finding the right place for skin care to deal with my complicated skin</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
