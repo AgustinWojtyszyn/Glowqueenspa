@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Tailwind incluye la mayoría de los estilos por clases, este CSS se usa para refinar o extender cosas básicas */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F9F4;
+  color: #1E2E4A;
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegurar que las imágenes escalen correctamente */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos para los globos de texto (burbujas de testimonios) */
+.testimonial-bubble {
+  background-color: #D1E3DD;
+  border-radius: 1rem;
+  padding: 1rem;
+  max-width: 280px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  position: absolute;
+  z-index: 20;
+  font-size: 0.875rem;
+}
+
+/* Modificadores de posición (se usan solo si no se controlan con Tailwind directamente) */
+.bubble-top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.bubble-bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Estilo para iconos dentro de las burbujas */
+.testimonial-bubble i {
+  color: #1E2E4A;
+  margin-right: 0.5rem;
+}
+
+/* Dropdown del nav */
+nav .group:hover .group-hover\:visible {
+  visibility: visible;
+}
+nav .group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+/* Utilidades para evitar zoom en desktop */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* Asegurar transiciones suaves */
+button,
+a {
+  transition: all 0.2s ease-in-out;
+}
+/* Estilo para el botón de "Ver más" */
+.btn-view-more {
+  background-color: #1E2E4A;
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+}
