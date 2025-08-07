@@ -1,149 +1,256 @@
  <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GlowQueen</title>
-    <link href="styles.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body
-    class="font-sans text-[#1E2E4A]"
-    style="background: linear-gradient(to right, white 70%, #b3e5fc 30%);"
-  >
-    <header class="flex justify-between items-center px-6 py-4 md:px-16">
-      <h1 class="text-2xl font-bold">
-        Glow<span class="text-[#6ed1b4]">Queen</span>
-      </h1>
-      <nav class="hidden md:flex gap-8 font-medium">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Facilities</a>
-        <a href="#">More</a>
-      </nav>
-      <div class="hidden md:flex gap-4">
-        <a href="#" class="hover:text-[#6ed1b4]">Sign In</a>
-        <a
-          href="#"
-          class="bg-[#1E2E4A] text-white px-5 py-2 rounded-full font-semibold hover:bg-[#16203a] transition"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
-
-    <main class="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 py-12 gap-8">
-      <!-- Texto principal -->
-      <section class="md:w-1/2 space-y-6 text-center md:text-left">
-        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
-          Bring back the beauty and glow of your skin
-        </h2>
-        <p class="text-[#7E7E7E] mt-4 text-sm md:text-base">
-          We provide you various treatments from head to toe using the best products, advanced technology, and affordable prices.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
-          <a href="#" class="bg-[#1E2E4A] text-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#16203a] transition">
-            Book Now
-          </a>
-          <a href="#" class="flex items-center gap-2 text-sm hover:underline">
-            <span class="w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:shadow-xl transition">
-              <i class="fas fa-play"></i>
-            </span>
-            Watch Video
-          </a>
-        </div>
-
-        <!-- Íconos informativos -->
-        <div class="mt-12 bg-white rounded-xl shadow-lg py-8 px-6 flex justify-around max-w-[420px] mx-auto md:mx-0">
-          <div class="flex flex-col items-center gap-2">
-            <div class="bg-[#6ed1b4] rounded-full p-3">
-              <i class="fas fa-spa text-2xl text-white"></i>
-            </div>
-            <p class="font-extrabold text-2xl text-[#1E2E4A]">15+</p>
-            <p class="text-base text-[#1E2E4A] text-center font-semibold">
-              Years Experience
-            </p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="bg-[#6ed1b4] rounded-full p-3">
-              <i class="fas fa-user-md text-2xl text-white"></i>
-            </div>
-            <p class="font-extrabold text-2xl text-[#1E2E4A]">25+</p>
-            <p class="text-base text-[#1E2E4A] text-center font-semibold">
-              Expert Therapists
-            </p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="bg-[#6ed1b4] rounded-full p-3">
-              <i class="fas fa-smile text-2xl text-white"></i>
-            </div>
-            <p class="font-extrabold text-2xl text-[#1E2E4A]">100%</p>
-            <p class="text-base text-[#1E2E4A] text-center font-semibold">
-              Client Satisfaction
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Imagen con globos de testimonio -->
-      <section class="md:w-1/2 relative flex justify-center items-center">
-        <div class="relative z-10">
-          <img
-            src="https://storage.googleapis.com/a1aa/image/8eb9275c-8051-4dad-858f-eaf4862c052e.jpg"
-            alt="Model woman"
-            class="rounded-tl-[100px] rounded-bl-[100px] w-full max-w-[400px] md:max-w-[500px] lg:max-w-[550px]"
-          />
-
-          <!-- Globo superior izquierdo -->
-          <div class="testimonial-bubble bubble-top-left hidden md:block">
-            <p><i class="fas fa-quote-left"></i> I have a regular schedule to take treatment from GlowQueen, they gave me the best service and treatment ever to maintain the beauty and health of my skin</p>
-            <p class="font-bold mt-2">Sophia Princeton</p>
-          </div>
-
-          <!-- Globo inferior derecho -->
-          <div class="testimonial-bubble bubble-bottom-right hidden md:block">
-            <p><i class="fas fa-quote-left"></i> For the past few years, I've had a hard time finding the right place for skin care to deal with my complicated skin</p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
-
+<head>
+  <meta charset="UTF-8">
+  <title>GlowQueen</title>
+  <meta name="viewport" content="width=1200">
   <style>
-    /* Estilos para los globos de testimonio */
-    .testimonial-bubble {
+    html, body {
+      margin: 0; padding: 0;
+      width: 100vw; min-width: 1200px; height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif; background: #f8f8f8;
+      overflow: hidden;
+    }
+    .bg-vertical-bar {
       position: absolute;
-      background-color: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      max-width: 300px;
-      font-size: 14px;
-      line-height: 1.5;
+      top: 0;
+      left: calc(56% - 35px);
+      width: calc(50vw + 350px);
+      height: 79vh;
+      min-width: 450px;
+      background: #bce5db;
+      z-index: 1;
+      border-bottom-left-radius: 0px;
+      box-shadow: 0 7px 32px -12px rgba(130,160,144,0.09);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 20% 100%, 0 90%);
     }
-
-    .bubble-top-left {
-      top: -50px;
-      left: -50px;
+    .herbal-bg-center {
+      position: absolute;
+      top: 50%;
+      left: calc(53% + 120px);
+      transform: translate(-50%,-50%);
+      width: 480px;
+      opacity: 0.14;
+      z-index: 2;
+      pointer-events: none;
+      user-select: none;
     }
-
-    .bubble-bottom-right {
-      bottom: -50px;
-      right: -50px;
+    .herbal-bg-large {
+      position: absolute;
+      top: 50%;
+      left: calc(75%);
+      transform: translate(-50%,-50%);
+      width: 600px;
+      opacity: 0.08;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
     }
+    .herbal-logo {
+      position: absolute;
+      top: 95px;
+      left: calc(74% - 60px);
+      transform: translateX(-50%);
+      width: 192px;
+      opacity: 0.22;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .woman-hero {
+      position: absolute;
+      top: 7vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 960px;
+      max-width: 99vw;
+      z-index: 4;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+      transition: left 0.2s;
+    }
+    /* --- SECCIÓN DE ICONOS Y DATOS un 50% MÁS GRANDE --- */
+    .services-badge {
+      position: fixed;
+      left: 12px;
+      bottom: 54px;
+      background: #fff;
+      border-radius: 42px;
+      box-shadow: 0 14px 35px 0 rgba(174,227,215,0.16);
+      padding: 24px 38px 22px 38px;
+      min-width: 420px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 28px;
+      z-index: 100;
+      /* Aire suficiente para no rozar ningún borde ni elemento visual */
+    }
+    .service-fact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 75px;
+      flex: 1 1 0;
+    }
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: #f5faf8;
+      border-radius: 13px;
+      box-shadow: 0 3px 9px 0 rgba(174,227,215,0.11);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .service-icon img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0px 3px 3px rgba(120,156,113,0.05));
+    }
+    .fact-number {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 17px;
+      color: #17b085;
+      font-weight: 800;
+      margin-bottom: 3px;
+      line-height: 1;
+      letter-spacing: -0.2px;
+      text-align: center;
+    }
+    .fact-label {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #22314a;
+      line-height: 1.04;
+      letter-spacing: 0.008em;
+      text-align: center;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .fact-label span {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 500;
+      color: #8994b0;
+      letter-spacing:0.009em;
+      margin-top: 1.5px;
+      text-transform: none;
+    }
+    @media (max-width: 1200px) {
+      .services-badge { left: 7px; bottom: 7px; padding: 5px 3px 5px 4px; min-width: 100px; min-height: 32px; gap: 6px;}
+      .service-icon { width: 14px; height: 14px;}
+      .service-icon img { width: 10px; height: 10px;}
+      .fact-number { font-size: 5px;}
+      .fact-label { font-size: 3.7px;}
+      .fact-label span { font-size: 3.5px;}
+    }
+    /* layout general (sin cambios) */
+    .header { width: 100vw; height: 70px; background: transparent; position: relative; display: flex; align-items: center; justify-content: flex-start; box-sizing: border-box; padding: 0 30px; z-index: 10;}
+    .logo { font-size: 28px; font-weight: 700; margin-right: 80px; }
+    .logo span { color: #aee3d7; }
+    .nav { display: flex; align-items: center; gap: 45px; font-size: 17px; margin-right: auto; margin-left: 80px; }
+    .nav a { color: #142245; text-decoration: none; font-weight: 500; }
+    .auth { display: flex; gap: 12px;}
+    .auth button, .auth a { background: none; border: none; color: #142245; font-size: 15px; cursor: pointer; font-weight: 600; }
+    .auth .signup { background: #142245; color: #fff; border-radius: 22px; padding: 8px 20px; }
+    .main-content { position: relative; width: 100vw; height: calc(100vh - 70px); display: flex; z-index: 5;}
+    .left-block { flex: 0 0 620px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding-left: 24px; z-index: 30; margin-top: -210px;}
+    .left-block h1 { font-size: 46px; color: #142245; font-weight: 700; margin: 0 0 18px 0; z-index: 30; line-height: 1.16; }
+    .left-block p { color: #979faa; font-size: 20px; margin: 0 0 26px 0; font-weight: 400; max-width: 90%; z-index: 30; }
+    .cta-row { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; z-index: 30;}
+    .cta-row button { background: #142245; color: white; border: none; border-radius: 22px; padding: 13px 32px; font-weight: 700; font-size: 18px; cursor: pointer; }
+    .cta-row .play { background: none; color: #142245; font-weight: 600; font-size: 16px; display: flex; align-items: center;}
+    .cta-row .play:before {
+      content: '';
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      background: #e3efe7;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M8 5v14l11-7z' fill='%23142245'/></svg>") center/60% no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M8 5v14l11-7z' fill='%23142245'/></svg>") center/60% no-repeat;
+      margin-right: 7px;
+      border-radius: 50%;
+    }
+    .testimonial, .testimonial2 { position: absolute; max-width: 330px; min-width: 200px; font-size: 15px; border-radius: 32px 31px 38px 46px / 41px 73px 34px 52px; padding: 32px 36px 27px 48px; z-index: 40; color: #142245; background: rgba(255,247,245,0.62); box-shadow: 0 6px 36px 0 rgba(120,140,145,0.08); line-height: 1.65; backdrop-filter: blur(7px); border: 1.2px solid rgba(174,227,215,0.13); font-family: 'Montserrat', Arial, sans-serif;}
+    .testimonial { top: 105px; right: 7vw; }
+    .testimonial2 { top: 340px; right: 13vw; }
+    .testimonial .author, .testimonial2 .author { display: block; font-weight: 700; margin-top: 18px; font-size: 14px; letter-spacing: 0.01em; color: #22394e; opacity: 0.75;}
+    .testimonial::before, .testimonial2::before { content: "“"; font-family: Georgia, serif; font-size: 65px; color: #acd6c7; line-height: 0.2; position: absolute; left: 17px; top: 11px; z-index: 60; opacity: 0.65; }
   </style>
-  <script>
-    // Mostrar los globos de testimonio al cargar la página
-    window.onload = function () {
-      const bubbles = document.querySelectorAll(".testimonial-bubble");
-      bubbles.forEach((bubble) => {
-        bubble.classList.remove("hidden");
-      });
-    };
-  </script>
+</head>
+<body>
+  <!-- Capas fondo y modelo -->
+  <div class="bg-vertical-bar"></div>
+  <img class="herbal-bg-center" src="herbal.png" alt="Herbal Fondo">
+  <img class="herbal-bg-large" src="herbal.png" alt="Herbal Fondo Grande">
+  <img class="herbal-logo" src="herbal.png" alt="Herbal Logo">
+  <img class="woman-hero" src="woman.png" alt="Mujer">
+
+  <div class="header">
+    <div class="logo">Glow<span>Queen</span></div>
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Facilities</a>
+      <a href="#">More ▾</a>
+    </div>
+    <div class="auth">
+      <a href="#" style="color: #5abaab; font-weight:700;">Sign In</a>
+      <button class="signup">Sign Up</button>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="left-block">
+      <h1>Bring back the beauty<br>and glow of your skin</h1>
+      <p>
+        We provide you various treatments from head to toe using the best product, advanced technology, and affordable price
+      </p>
+      <div class="cta-row">
+        <button>Book Now</button>
+        <button class="play">Watch Video</button>
+      </div>
+    </div>
+    <!-- ICONOS Y HECHOS SOBRE EL BORDE INFERIOR IZQUIERDO, 25% MÁS GRANDE -->
+    <div class="services-badge">
+      <div class="service-fact">
+        <div class="service-icon">
+          <img src="relaxWoman.png" alt="Relax Woman">
+        </div>
+        <div class="fact-number">15 +</div>
+        <div class="fact-label">Special<br>treatment</div>
+      </div>
+      <div class="service-fact">
+        <div class="service-icon">
+          <img src="flowerIcon.png" alt="Flower Icon">
+        </div>
+        <div class="fact-number">25 +</div>
+        <div class="fact-label">Professional<br>therapist</div>
+      </div>
+      <div class="service-fact">
+        <div class="service-icon">
+          <img src="herbsmix.png" alt="Herbs Mix">
+        </div>
+        <div class="fact-number">100%</div>
+        <div class="fact-label">Herbal<br>Cream Formula</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      I have a regular schedule to take treatment from GlowQueen, they gave me the best service and treatment ever to maintain the beauty and health of my skin
+      <span class="author">Sophia Princeton</span>
+    </div>
+    <div class="testimonial2">
+      For the past few years, I’ve had a hard time finding the right place for skin care to deal with my complicated skin condition, thank God I found GlowQueen to treat my skin
+      <span class="author">Tamara Jules</span>
+    </div>
+  </div>
+</body>
+</html>
