@@ -1,15 +1,53 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>GlowQueen</title>
   <meta name="viewport" content="width=1200">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* Preloader para evitar flash de contenido sin estilo */
+    .page-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f8f8f8;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .page-preloader.loaded {
+      opacity: 0;
+      pointer-events: none;
+    }
+    body.loading {
+      overflow: hidden;
+    }
+    body.loading * {
+      visibility: hidden;
+    }
+    body.loading .page-preloader {
+      visibility: visible;
+    }
     html, body {
       margin: 0; padding: 0;
       width: 100vw; min-width: 1200px; height: 100vh;
-      font-family: 'Montserrat', Arial, sans-serif; background: #f8f8f8;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; 
+      background: #f8f8f8;
       overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-display: swap;
     }
     .bg-vertical-bar {
       position: absolute;
@@ -186,13 +224,18 @@
     .testimonial::before, .testimonial2::before { content: "“"; font-family: Georgia, serif; font-size: 65px; color: #acd6c7; line-height: 0.2; position: absolute; left: 17px; top: 11px; z-index: 60; opacity: 0.65; }
   </style>
 </head>
-<body>
+<body class="loading">
+  <!-- Preloader -->
+  <div class="page-preloader">
+    <div style="color: #142245; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">Loading...</div>
+  </div>
+
   <!-- Capas fondo y modelo -->
   <div class="bg-vertical-bar"></div>
-  <img class="herbal-bg-center" src="herbal.png" alt="Herbal Fondo">
-  <img class="herbal-bg-large" src="herbal.png" alt="Herbal Fondo Grande">
-  <img class="herbal-logo" src="herbal.png" alt="Herbal Logo">
-  <img class="woman-hero" src="woman.png" alt="Mujer">
+  <img class="herbal-bg-center" src="images/herbal.png?v=2025" alt="Herbal Fondo">
+  <img class="herbal-bg-large" src="images/herbal.png?v=2025" alt="Herbal Fondo Grande">
+  <img class="herbal-logo" src="images/herbal.png?v=2025" alt="Herbal Logo">
+  <img class="woman-hero" src="images/woman.png?v=2025" alt="Mujer">
 
   <div class="header">
     <div class="logo">Glow<span>Queen</span></div>
@@ -223,21 +266,21 @@
     <div class="services-badge">
       <div class="service-fact">
         <div class="service-icon">
-          <img src="relaxWoman.png" alt="Relax Woman">
+          <img src="images/relaxWoman.png?v=2025" alt="Relax Woman">
         </div>
         <div class="fact-number">15 +</div>
         <div class="fact-label">Special<br>treatment</div>
       </div>
       <div class="service-fact">
         <div class="service-icon">
-          <img src="flowerIcon.png" alt="Flower Icon">
+          <img src="images/flowerIcon.png?v=2025" alt="Flower Icon">
         </div>
         <div class="fact-number">25 +</div>
         <div class="fact-label">Professional<br>therapist</div>
       </div>
       <div class="service-fact">
         <div class="service-icon">
-          <img src="herbsmix.png" alt="Herbs Mix">
+          <img src="images/herbsmix.png?v=2025" alt="Herbs Mix">
         </div>
         <div class="fact-number">100%</div>
         <div class="fact-label">Herbal<br>Cream Formula</div>
@@ -252,5 +295,64 @@
       <span class="author">Tamara Jules</span>
     </div>
   </div>
+
+  <script>
+    // Asegurar que todo esté cargado antes de mostrar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verificar que las fuentes estén cargadas
+      if (document.fonts) {
+        document.fonts.ready.then(function() {
+          initializePage();
+        });
+      } else {
+        // Fallback para navegadores sin support para document.fonts
+        setTimeout(initializePage, 100);
+      }
+    });
+
+    function initializePage() {
+      // Precargar imágenes críticas
+      const criticalImages = [
+        'images/woman.png?v=2025',
+        'images/herbal.png?v=2025'
+      ];
+      
+      let loadedImages = 0;
+      const totalImages = criticalImages.length;
+      
+      criticalImages.forEach(src => {
+        const img = new Image();
+        img.onload = img.onerror = function() {
+          loadedImages++;
+          if (loadedImages === totalImages) {
+            showPage();
+          }
+        };
+        img.src = src;
+      });
+      
+      // Timeout para mostrar la página aunque no carguen todas las imágenes
+      setTimeout(showPage, 1000);
+    }
+
+    function showPage() {
+      document.body.classList.remove('loading');
+      const preloader = document.querySelector('.page-preloader');
+      if (preloader) {
+        preloader.classList.add('loaded');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 300);
+      }
+    }
+
+    // Fallback por si DOMContentLoaded ya pasó
+    if (document.readyState === 'loading') {
+      // El DOM aún se está cargando
+    } else {
+      // El DOM ya está cargado
+      setTimeout(initializePage, 50);
+    }
+  </script>
 </body>
 </html>
