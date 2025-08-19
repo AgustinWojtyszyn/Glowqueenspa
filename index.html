@@ -52,7 +52,7 @@
     .bg-vertical-bar {
       position: absolute;
       top: 0;
-      left: calc(56% - 35px);
+      left: calc(62% - 35px);
       width: calc(50vw + 350px);
       height: 79vh;
       min-width: 450px;
@@ -196,9 +196,44 @@
     .logo span { color: #aee3d7; }
     .nav { display: flex; align-items: center; gap: 45px; font-size: 17px; margin-right: auto; margin-left: 80px; }
     .nav a { color: #142245; text-decoration: none; font-weight: 500; }
-    .auth { display: flex; gap: 12px;}
+    .auth { display: flex; gap: 12px; align-items: center;}
     .auth button, .auth a { background: none; border: none; color: #142245; font-size: 15px; cursor: pointer; font-weight: 600; }
     .auth .signup { background: #142245; color: #fff; border-radius: 22px; padding: 8px 20px; }
+    .auth .icon-btn { 
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+      padding: 8px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+    .auth .icon-btn:hover {
+      transform: scale(1.1);
+    }
+    .auth .icon-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #142245;
+    }
+    .auth .search-btn svg,
+    .auth .cart-btn svg {
+      fill: none;
+      stroke: #142245;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .auth .search-btn:hover,
+    .auth .cart-btn:hover {
+      color: #5abaab;
+      transform: scale(1.1);
+    }
+    .auth .search-btn:hover svg,
+    .auth .cart-btn:hover svg {
+      stroke: #5abaab;
+    }
     .main-content { position: relative; width: 100vw; height: calc(100vh - 70px); display: flex; z-index: 5;}
     .left-block { flex: 0 0 620px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding-left: 24px; z-index: 30; margin-top: -210px;}
     .left-block h1 { font-size: 46px; color: #142245; font-weight: 700; margin: 0 0 18px 0; z-index: 30; line-height: 1.16; }
@@ -209,19 +244,26 @@
     .cta-row .play:before {
       content: '';
       display: inline-block;
-      width: 21px;
-      height: 21px;
-      background: #e3efe7;
-      -webkit-mask: url("data:image/svg+xml;utf8,<svg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M8 5v14l11-7z' fill='%23142245'/></svg>") center/60% no-repeat;
-      mask: url("data:image/svg+xml;utf8,<svg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M8 5v14l11-7z' fill='%23142245'/></svg>") center/60% no-repeat;
-      margin-right: 7px;
+      width: 24px;
+      height: 24px;
+      background: #142245;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg fill='none' stroke='none' viewBox='0 0 24 24' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M8 5v14l11-7z' fill='%23142245'/></svg>") center/70% no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg fill='none' stroke='none' viewBox='0 0 24 24' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M8 5v14l11-7z' fill='%23142245'/></svg>") center/70% no-repeat;
+      margin-right: 8px;
       border-radius: 50%;
+      border: 2px solid #142245;
+      transition: all 0.2s ease;
+    }
+    .cta-row .play:hover:before {
+      background: #5abaab;
+      border-color: #5abaab;
+      transform: scale(1.1);
     }
     .testimonial, .testimonial2 { position: absolute; max-width: 330px; min-width: 200px; font-size: 15px; border-radius: 32px 31px 38px 46px / 41px 73px 34px 52px; padding: 32px 36px 27px 48px; z-index: 40; color: #142245; background: rgba(255,247,245,0.62); box-shadow: 0 6px 36px 0 rgba(120,140,145,0.08); line-height: 1.65; backdrop-filter: blur(7px); border: 1.2px solid rgba(174,227,215,0.13); font-family: 'Montserrat', Arial, sans-serif;}
     .testimonial { top: 105px; right: 7vw; }
     .testimonial2 { top: 340px; right: 13vw; }
     .testimonial .author, .testimonial2 .author { display: block; font-weight: 700; margin-top: 18px; font-size: 14px; letter-spacing: 0.01em; color: #22394e; opacity: 0.75;}
-    .testimonial::before, .testimonial2::before { content: "“"; font-family: Georgia, serif; font-size: 65px; color: #acd6c7; line-height: 0.2; position: absolute; left: 17px; top: 11px; z-index: 60; opacity: 0.65; }
+    .testimonial::before, .testimonial2::before { content: "\""; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 100px; color: #000080; line-height: 0.2; position: absolute; left: 35px; top: 30px; z-index: 60; opacity: 0.6; transform: rotate(10deg); font-weight: 100; font-stretch: ultra-condensed; }
   </style>
 </head>
 <body class="loading">
@@ -229,14 +271,12 @@
   <div class="page-preloader">
     <div style="color: #142245; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600;">Loading...</div>
   </div>
-
   <!-- Capas fondo y modelo -->
   <div class="bg-vertical-bar"></div>
   <img class="herbal-bg-center" src="images/herbal.png?v=2025" alt="Herbal Fondo">
   <img class="herbal-bg-large" src="images/herbal.png?v=2025" alt="Herbal Fondo Grande">
   <img class="herbal-logo" src="images/herbal.png?v=2025" alt="Herbal Logo">
   <img class="woman-hero" src="images/woman.png?v=2025" alt="Mujer">
-
   <div class="header">
     <div class="logo">Glow<span>Queen</span></div>
     <div class="nav">
@@ -247,6 +287,16 @@
       <a href="#">More ▾</a>
     </div>
     <div class="auth">
+      <button class="icon-btn search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 18a7.5 7.5 0 117.5-7.5 7.5 7.5 0 01-7.5 7.5zM21 21l-5.2-5.2"/>
+        </svg>
+      </button>
+      <button class="icon-btn cart-btn" aria-label="Shopping Cart">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a3 3 0 00-6 0v4"/>
+        </svg>
+      </button>
       <a href="#" style="color: #5abaab; font-weight:700;">Sign In</a>
       <button class="signup">Sign Up</button>
     </div>
@@ -295,7 +345,6 @@
       <span class="author">Tamara Jules</span>
     </div>
   </div>
-
   <script>
     // Asegurar que todo esté cargado antes de mostrar la página
     document.addEventListener('DOMContentLoaded', function() {
@@ -309,7 +358,6 @@
         setTimeout(initializePage, 100);
       }
     });
-
     function initializePage() {
       // Precargar imágenes críticas
       const criticalImages = [
@@ -334,7 +382,6 @@
       // Timeout para mostrar la página aunque no carguen todas las imágenes
       setTimeout(showPage, 1000);
     }
-
     function showPage() {
       document.body.classList.remove('loading');
       const preloader = document.querySelector('.page-preloader');
@@ -345,7 +392,6 @@
         }, 300);
       }
     }
-
     // Fallback por si DOMContentLoaded ya pasó
     if (document.readyState === 'loading') {
       // El DOM aún se está cargando
